@@ -1,0 +1,39 @@
+.heading
+{
+    width: 100%;
+    text-align: left;
+}
+
+.heading h3
+{
+   display: inline;
+}
+.heading button
+{
+    float: right;
+    border: 1px solid white;
+}
+#restart
+{
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+    
+}
+.sticky_footer
+{
+    background-color: antiquewhite;
+    color: rgb(241, 115, 115);
+    font-family: 'Courier New';
+    font-size: 22px;
+    bottom: 0px;
+    width: 100%;
+    position: fixed;
+}
+.instruction_image
+{
+    display: inline-block;
+    width: 45%;
+}
+
+    
+
