@@ -1,5 +1,6 @@
+var rightWristX="";
+var rightWristY="";
 
-/*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
 
@@ -39,12 +40,26 @@ function modelLoaded()
   console.log('poseNet is initialized');
 }
 
+function gotPoses(results)
+{
+  if(results.length>0)
+  {
+    results[0].rightWrist.x;
+    results[0].rightWrist.y;
+    console.log(rightWristX + " " + rightWristY + " " );
+  }
+}
 
 function draw(){
-
+if(rightWrist_score>0.2)
+{
+  fill("red");
+  stroke("red");
+  circle(rightWristX,rightWristY,20);
+}
  background(0); 
 
- fill("black");
+ fill("black")
  stroke("black");
  rect(680,0,20,700);
 
