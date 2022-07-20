@@ -1,5 +1,4 @@
-var rightWristX="";
-var rightWristY="";
+
 
 
 var paddle2 =10,paddle1=10;
@@ -21,6 +20,12 @@ var ball = {
     dx:3,
     dy:3
 }
+
+var rightWristX=0;
+var rightWristY=0;
+scoreRightWrist=0;
+//Define a variable to hold the status of the game
+game_status="";
 
 function setup(){
   var canvas =  createCanvas(700,600);
@@ -46,19 +51,26 @@ function gotPoses(results)
   {
     results[0].rightWrist.x;
     results[0].rightWrist.y;
-    console.log(rightWristX + " " + rightWristY + " " );
+    scoreRightWrist =  results[0].pose.keypoints[10].score;
+    console.log(scoreRightWrist);
   }
 }
 
-function draw(){
-if(rightWrist_score>0.2)
-{
-  fill("red");
-  stroke("red");
-  circle(rightWristX,rightWristY,20);
-}
- background(0); 
 
+function startGame()
+{
+ game_status="start";
+ document.getElementById("status").innerHTML="Game is loaded";
+}
+
+function draw(){
+  if(game_staus=="start")
+  {
+
+  
+
+  background(0); 
+   start
  fill("black")
  stroke("black");
  rect(680,0,20,700);
@@ -66,6 +78,13 @@ if(rightWrist_score>0.2)
  fill("black");
  stroke("black");
  rect(0,0,20,700);
+
+ if(rightWrist_score>0.2)
+{
+  fill("red");
+  stroke("red");
+  circle(rightWristX,rightWristY,30);
+}
  
    //funtion paddleInCanvas call 
    paddleInCanvas();
@@ -94,7 +113,7 @@ if(rightWrist_score>0.2)
    
    //function move call which in very important
     move();
-}
+}}
 
 
 
